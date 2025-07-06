@@ -1,0 +1,33 @@
+Language: Cpp
+BasedOnStyle: Google
+IndentWidth: 2
+UseTab: Never
+TabWidth: 8
+ColumnLimit: 120
+PointerAlignment: Right
+AccessModifierOffset: -2
+BreakBeforeBraces: Attach
+DerivePointerAlignment: false
+
+AllowShortFunctionsOnASingleLine: All
+AllowShortIfStatementsOnASingleLine: false
+AllowShortLoopsOnASingleLine: false
+AllowShortBlocksOnASingleLine: false
+
+AlwaysBreakAfterDefinitionReturnType: None
+AlwaysBreakTemplateDeclarations: true
+
+MaxEmptyLinesToKeep: 1
+EmptyLineBeforeAccessModifier: Always
+SeparateDefinitionBlocks: Always
+KeepEmptyLinesAtTheStartOfBlocks: false
+
+SortIncludes: true
+IncludeBlocks: Regroup
+IncludeCategories:
+  - Regex:           '^<windows\.h>'
+    Priority:        1
+  - Regex:           '^<.*>'
+    Priority:        2
+  - Regex:           '^".*"'
+    Priority:        3
