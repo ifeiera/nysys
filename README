@@ -1,0 +1,77 @@
++-------------------------------------------+
+| NYSYS - SYSTEM INFO COLLECTOR FOR WINDOWS |
++-------------------------------------------+
+v0.5.0 beta
+
+This is NySys, a small and simple project for gathering hardware 
+information on Windows. It's designed to run quietly in the background 
+and send collected data as a JSON string through a callback. 
+Pretty straightforward - no fancy stuff.
+
+⚠ NOTE: This project is designed to build as a statically-exported `.dll`
+If you want to build it as a fully static `.lib`, you'll need to 
+make a few adjustments.
+
+Made for QC Labs Axioo Indonesia.
+This project acts as the backend for the QC client (NYTH Client), 
+responsible for sending system info to a webapp.
+
+---
+
+WHAT IT COLLECTS:
+Motherboard, CPU, GPU, Memory, Storage, Network (Ethernet & Wi-Fi), 
+Audio Devices, Battery, Monitors.
+
+For a complete example of collected data, see: `result.json`
+
+⚠ NOTE:
+This project is still under active development and is not yet 100% final.
+There are many features and improvements that can still be added.
+Proper and complete documentation is currently in progress.
+
+---
+
+BUILDING THE PROJECT:
+Make sure you have Visual Studio (with C++ development tools) 
+and CMake installed.
+VStudio: https://visualstudio.microsoft.com
+Cmake: https://cmake.org/download
+
+To build, run the following from the project root:
+> mkdir build  
+> cd build  
+> cmake ..  
+> cmake --build . --config Release  
+or
+> just run build.exe
+
+This will generate `nysys.dll` and its import `.lib` inside 
+`build/Release`, along with example programs.
+
+---
+
+HOW TO USE:
+Once built, you’ll get a DLL to integrate into your project. 
+Both C++ and C interfaces are available.
+
+Usage flow:
+1. Set a callback function - to receive the JSON data  
+2. Start monitoring - runs in a background thread  
+3. Let your app run - data will stream via callback  
+4. Stop monitoring - shuts everything down
+
+Check the `examples/` folder for full demos:  
+- `example_cpp.cpp` (C++)  
+- `example_c.c` (plain C)
+
+That's it. Have fun.
+
+
+
+
+
+
+⣶⣤⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣤⣶
+⠀⠈⠛⠿⣶⣄⠀⣀⠀⠀⠀⡀⠀⣤⣶⠿⠛⠁
+⠀⠀⣀⣴⡾⠟⠀⠸⣦⣀⣼⠃⠀⠻⣷⣤⣀
+⣾⠟⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠻⣷
